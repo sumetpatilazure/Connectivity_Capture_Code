@@ -1,5 +1,5 @@
 ﻿
-Connect-AzAccount -SubscriptionId "24490b86-506a-4fb7-9b5e-b070a5674daa" -TenantId "72f988bf-86f1-41af-91ab-2d7cd011db47"
+Connect-AzAccount -SubscriptionId ""#####"" -TenantId ""#####""
 Write-Output ("Connected to the Account")
 $Subscriptions = $(Get-AzSubscription | Where-Object { ($_.Name.StartsWith("Microsoft")) -and ($_.Name -match $Environment) -and (($_.State -ieq "Enabled") -or ($_.State -ieq "Active")) })
 
@@ -36,7 +36,7 @@ foreach ($Subscription in $Subscriptions) {
 
                     }
                     elseif ($VirtualNetworkPeering.peeringSyncLevel -contains "RemoteNotInSync") {
-                        Connect-AzAccount -SubscriptionId "7e5b80fe-60bb-41e4-bc5a-298da03b2364" -TenantId "7f887fb7-19a5-45f9-aa78-3beda0ca1858"
+                        Connect-AzAccount -SubscriptionId ""#####"" -TenantId ""#####"
                         Write-Output ("Connected to the Account")
                         $Subscriptions = $(Get-AzSubscription | Where-Object { ($_.Name.StartsWith("Azure")) -and ($_.Name -match $Environment) -and (($_.State -ieq "Enabled") -or ($_.State -ieq "Active")) })
 
